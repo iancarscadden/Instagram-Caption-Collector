@@ -9,17 +9,24 @@ L = instaloader.Instaloader(
     download_comments=False,
     save_metadata=False
 )
+# Login to instagram using your username and password
+# Pass in your information below as ("username", "password")
 
-L.login('ian.carscadden', '')  # Your login
-PROFILE = "garyvee"
+L.login('Your username', 'Your password')  # Your login
+
+# Enter the username of the account you want to pull captions form below 
+PROFILE = "Username"
 profile = instaloader.Profile.from_username(L.context, PROFILE)
 
 all_captions = []
 post_count = 0
 
+""" SPECIFY THE AMOUNT OF POSTS YOU WANT TO PULL CAPTIONS FROM BELOW """
+specefied_amount = 10
+
 print("Fetching posts...")
 for post in profile.get_posts():
-    if post_count >= 1500:
+    if post_count >= specified_amount:
         break  # Stop after processing 1500 posts
 
     if post.caption:
