@@ -38,6 +38,6 @@ for post in profile.get_posts():
 
 print("Finished fetching captions.")
 
-# Save as a JSON file
-with open("garyvee_captions_final.json", "w", encoding="utf-8") as f:
+# Save as a JSON file, set to save as raw_captions.json
+with open("raw_captions.json", "w", encoding="utf-8") as f:
     json.dump(all_captions, f, ensure_ascii=False, indent=4)  # ensure_ascii=False is key
